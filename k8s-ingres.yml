@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: hmdp-ingress
+  namespace: default
+spec:
+  rules:
+  - host: hmdp.huimeihealth.com.cn
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: hmdp-fe
+          servicePort: 80
+

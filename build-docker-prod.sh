@@ -1,0 +1,1 @@
+docker build -t registry.cn-shanghai.aliyuncs.com/huimeihealth/hmdp-platform-frontend:V0.1.prod -f ./Dockerfile.prod .

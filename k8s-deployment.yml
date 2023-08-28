@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hmdp-fe
+  namespace: hmdp
+  labels:
+    app: hmdp-fe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hmdp-fe
+  template:
+    metadata:
+      labels:
+        app: hmdp-fe
+    spec:
+      terminationGracePeriodSeconds: 60
+      containers:
+      - name: hmdp-fe
+        image: registry-vpc.cn-shanghai.aliyuncs.com/huimeihealth/hmdp-platform-frontend:V0.1.prod
+        ports:
+        - containerPort: 88
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: hmdp-fe
+  namespace: hmdp
+  labels:
+    app: hmdp-fe
+spec:
+  ports:
+  - port: 80
+    targetPort: 88
+  selector:
+    app: hmdp-fe

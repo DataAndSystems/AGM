@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    name: hmdp-fe
+  name: hmdp-fe
+spec:
+  containers:
+    - image: registry-vpc.cn-shanghai.aliyuncs.com/huimeihealth/hmdp-platform-frontend:V0.1.prod
+      imagePullPolicy: IfNotPresent
+      name: hmdp-fe
+      ports:
+        - containerPort: 88
+          targetPort: 80
+          protocol: TCP
+      resources: {}
+      securityContext:
+        capabilities: {}
+        privileged: false
+      terminationMessagePath: /dev/termination-log
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+#  nodeSelector:
+#    env: test-team
+status: {}
