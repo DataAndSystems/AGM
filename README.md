@@ -1,4 +1,4 @@
-# Data Platform Frontend
+# AGM device software
 
 This project is powered by [Ant Design Pro](https://pro.ant.design). Follow is the quick guide for how to use.
 
