@@ -1,4 +1,4 @@
-# Huimei Data Platform Frontend
+# Data Platform Frontend
 
 This project is powered by [Ant Design Pro](https://pro.ant.design). Follow is the quick guide for how to use.
 
